@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import * as docx from 'docx';
 import './style.css';
+import Login from './Login';
+
 
 const OLLAMA_URL = import.meta.env.VITE_OLLAMA_URL || 'http://127.0.0.1:11434/v1/completions';
 const OLLAMA_MODEL = import.meta.env.VITE_OLLAMA_MODEL || 'llama2';
@@ -713,6 +715,11 @@ function extractSystemName(titleStr, claimsText, disclosureText) {
 }
 
 export default function App() {
+  // ── Auth gate ─────────────────────────────────────────────────────
+  const [authed, setAuthed] = useState(() => sessionStorage.getItem('patent_auth') === '1');
+  if (!authed) return <Login onLogin={() => setAuthed(true)} />;
+
+  // ── App state ─────────────────────────────────────────────────────
   const [claims, setClaims]       = useState(null);
   const [drawings, setDrawings]   = useState(null);
   const [disclosure, setDisclosure] = useState(null);
