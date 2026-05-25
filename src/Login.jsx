@@ -20,7 +20,7 @@ export default function Login({ onLogin }) {
     await new Promise(r => setTimeout(r, 600));
 
     if (email.trim().toLowerCase() === VALID_EMAIL && password === VALID_PASSWORD) {
-      sessionStorage.setItem('patent_auth', '1');
+      localStorage.setItem('patent_auth', '1');
       onLogin();
     } else {
       setLoading(false);
@@ -82,7 +82,7 @@ export default function Login({ onLogin }) {
           <div className="login-card-heading">Welcome back</div>
           <div className="login-card-subheading">Sign in to access the specification generator</div>
 
-          <form onSubmit={handleSubmit} autoComplete="off">
+          <form onSubmit={handleSubmit}>
             {/* Email */}
             <div className="login-field">
               <label className="login-label">
@@ -93,6 +93,8 @@ export default function Login({ onLogin }) {
                 <input
                   id="login-email"
                   type="email"
+                  name="email"
+                  autoComplete="email"
                   className="login-input"
                   placeholder="patent.admin@gmail.com"
                   value={email}
@@ -113,6 +115,8 @@ export default function Login({ onLogin }) {
                 <input
                   id="login-password"
                   type={showPwd ? 'text' : 'password'}
+                  name="password"
+                  autoComplete="current-password"
                   className="login-input"
                   placeholder="Enter your password"
                   value={password}

@@ -714,10 +714,7 @@ function extractSystemName(titleStr, claimsText, disclosureText) {
   return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 }
 
-export default function App() {
-  // ── Auth gate ─────────────────────────────────────────────────────
-  const [authed, setAuthed] = useState(() => sessionStorage.getItem('patent_auth') === '1');
-  if (!authed) return <Login onLogin={() => setAuthed(true)} />;
+function PatentApp() {
 
   // ── App state ─────────────────────────────────────────────────────
   const [claims, setClaims]       = useState(null);
@@ -1117,4 +1114,19 @@ export default function App() {
       </div>{/* /main-content */}
     </div>/* /app-shell */
   );
+}
+
+/* ── Auth gate wrapper — keeps all hooks rule-compliant ─────────── */
+export default function App() {
+  const [authed, setAuthed] = useState(
+    () => localStorage.getItem('patent_auth') === '1'
+  );
+
+  const handleLogin = () => {
+    localStorage.setItem('patent_auth', '1');
+    setAuthed(true);
+  };
+
+  if (!authed) return <Login onLogin={handleLogin} />;
+  return <PatentApp />;
 }
