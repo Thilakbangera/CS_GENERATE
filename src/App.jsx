@@ -166,19 +166,29 @@ END with this mandatory fixed closing paragraph (copy verbatim):
 Apply article usage rules FRESH for this section only â€” restart noun tracking from scratch.
 Article rules: first mention of each noun/component in THIS section â†’ use "a" or "an"; every subsequent mention in this section â†’ use "the".
 
-For EACH figure in the drawings (use the figures listed in the INVENTION CONTEXT):
+CRITICAL SUB-FIGURE RULE â€” MANDATORY, NO EXCEPTIONS:
+If the drawings contain sub-figures such as FIG. 1A, FIG. 1B, FIG. 2A, FIG. 2B, FIG. 4A, FIG. 4B, etc., then EACH sub-figure MUST have its OWN completely separate sentence entry.
+- FORBIDDEN: Merging sub-figures into one entry (e.g., "FIG. 1 illustrates FIG. 1A and FIG. 1B..." is WRONG).
+- FORBIDDEN: Grouping sub-figures under a parent label (e.g., starting with "**FIG. 1**" when the actual figures are 1A and 1B).
+- REQUIRED: Write "**FIG. 1A** illustrates..." as one entry, then "**FIG. 1B** illustrates..." as a completely separate entry on its own line.
+- Every sub-figure label that appears in the drawings list gets its own dedicated bold label and sentence. Never skip a sub-figure or combine two sub-figures into one line.
+
+For EACH figure (or sub-figure) in the drawings (use the exact figures listed in the INVENTION CONTEXT):
 Write ONE sentence per figure entry. The sentence must:
-- Start with the figure identifier in bold: e.g. **FIG. 1** illustrates...
-- Describe what the figure visually shows in one clear concise sentence.
+- Start with the figure identifier in bold: e.g. **FIG. 1A** illustrates... or **FIG. 2** illustrates...
+- Describe what that specific figure/sub-figure visually shows in one clear concise sentence.
 - Include all component reference numbers in bold: e.g. **(100)**, **(101)**, **(103)**.
 - Apply article rules: first time a component is introduced in this section â†’ "a"; subsequent mentions â†’ "the".
-- End with: "according to some example embodiments."
+- End with: "according to some example embodiments." or "according to one embodiment of the invention."
 - Must NOT exceed 3 lines per entry.
 
-Format each figure on its OWN LINE, like this pattern:
-**FIG. 1** illustrates [what figure 1 shows with all reference numbers bolded], according to some example embodiments.
-**FIG. 2** illustrates [what figure 2 shows with all reference numbers bolded], according to some example embodiments.
-[etc. for all figures]
+Format each figure on its OWN LINE, one sentence each:
+**FIG. 1A** illustrates [what FIG. 1A shows with all reference numbers bolded], according to some example embodiments.
+**FIG. 1B** illustrates [what FIG. 1B shows with all reference numbers bolded], according to some example embodiments.
+**FIG. 2** illustrates [what FIG. 2 shows with all reference numbers bolded], according to some example embodiments.
+**FIG. 4A** illustrates [what FIG. 4A shows with all reference numbers bolded], according to some example embodiments.
+**FIG. 4B** illustrates [what FIG. 4B shows with all reference numbers bolded], according to some example embodiments.
+[etc. â€” one entry per figure or sub-figure, never merged]
 
 Also include TWO mandatory static sentences at the start (before listing figures), copy verbatim:
 "The foregoing and other features of embodiments will become more apparent from the following detailed description of embodiments when read in conjunction with the accompanying drawings. In the drawings, like reference numerals refer to like elements."
