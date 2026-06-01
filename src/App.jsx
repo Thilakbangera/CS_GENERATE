@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+﻿import { useState, useRef } from 'react';
 import * as docx from 'docx';
 import './style.css';
 import Login from './Login';
@@ -80,7 +80,8 @@ Each objective is one complete sentence of 1â€“2 lines. Objectives must be 
 Final paragraph (its own separate paragraph): 'These and other objects and characteristics of the present invention will become apparent from the further disclosure to be made in the detailed description given below.'
 CRITICAL â€” DO NOT include ANY reference numbers (e.g. (100), (101), (200)) or bolded component names with numbers anywhere in this section. This section must contain only plain descriptive text with NO parenthetical numbers whatsoever. Apply article rules for this section.`,
 
-    summary: `${base}Generate the Summary of the Invention section as a comprehensive paraphrase of all claims (Claims 1 through 8). Ensure every component, method step, and numerical limitation defined in the claims is paraphrased in a clear, narrative style using bold reference numbers for all components. Do not omit any claim elements. Apply article rules fresh for this section.`,
+    summary: `${base}Generate the Summary of the Invention section as a comprehensive paraphrase of all claims (Claims 1 through 8). Ensure every component, method step, and numerical limitation defined in the claims is paraphrased in a clear, narrative style.
+CRITICAL — DO NOT include ANY reference numbers (e.g. (100), (101), (200)) or bolded parenthetical numbers anywhere in this section. Write component names as plain descriptive text only, with NO parenthetical numbers whatsoever. Do not omit any claim elements. Apply article rules fresh for this section.`,
 
     detailed_description: `${base}Generate the Detailed Description of the Invention. This is the most critical and longest section. Apply article tracking FRESH starting at Part 1 and carry it CONTINUOUSLY through all 4 parts â€” all 4 parts form ONE section.
 
@@ -101,6 +102,7 @@ PART 1 â€” DEFINITIONS (10 definitions):
 For each of the 10 most important technical terms from the claims, write one definition paragraph of 60â€“90 words.
 Format: 'As used in this application, the term "[TERM]" refers to...' or 'The term "[TERM]" refers to...'
 Each definition must: (a) give only the general meaning of the term in plain technical language, and (b) explain its broad role in this type of invention. Do NOT include specific numerical values, parameter ranges, or component-specific implementation details â€” those belong in the figure descriptions.
+CRITICAL u{2014} DO NOT include ANY reference numbers (e.g. (100), (101), (200)) or bolded parenthetical numbers in PART 1. All definitions must be written in plain descriptive language with NO parenthetical numbers whatsoever.
 First mention of any noun â†’ use "a"/"an". Repeat mentions â†’ use "the".
 
 PART 2 â€” COMPONENTS:
@@ -177,17 +179,17 @@ For EACH figure (or sub-figure) in the drawings (use the exact figures listed in
 Write ONE sentence per figure entry. The sentence must:
 - Start with the figure identifier in bold: e.g. **FIG. 1A** illustrates... or **FIG. 2** illustrates...
 - Describe what that specific figure/sub-figure visually shows in one clear concise sentence.
-- Include all component reference numbers in bold: e.g. **(100)**, **(101)**, **(103)**.
+- CRITICAL u{2014} DO NOT include ANY reference numbers (e.g. (100), (101), (200)) or bolded parenthetical numbers in the figure descriptions. Write component names as plain descriptive text only, with NO parenthetical numbers whatsoever.
 - Apply article rules: first time a component is introduced in this section â†’ "a"; subsequent mentions â†’ "the".
 - End with: "according to some example embodiments." or "according to one embodiment of the invention."
 - Must NOT exceed 3 lines per entry.
 
 Format each figure on its OWN LINE, one sentence each:
-**FIG. 1A** illustrates [what FIG. 1A shows with all reference numbers bolded], according to some example embodiments.
-**FIG. 1B** illustrates [what FIG. 1B shows with all reference numbers bolded], according to some example embodiments.
-**FIG. 2** illustrates [what FIG. 2 shows with all reference numbers bolded], according to some example embodiments.
-**FIG. 4A** illustrates [what FIG. 4A shows with all reference numbers bolded], according to some example embodiments.
-**FIG. 4B** illustrates [what FIG. 4B shows with all reference numbers bolded], according to some example embodiments.
+**FIG. 1A** illustrates [what FIG. 1A shows, describing components by name without reference numbers], according to some example embodiments.
+**FIG. 1B** illustrates [what FIG. 1B shows, describing components by name without reference numbers], according to some example embodiments.
+**FIG. 2** illustrates [what FIG. 2 shows, describing components by name without reference numbers], according to some example embodiments.
+**FIG. 4A** illustrates [what FIG. 4A shows, describing components by name without reference numbers], according to some example embodiments.
+**FIG. 4B** illustrates [what FIG. 4B shows, describing components by name without reference numbers], according to some example embodiments.
 [etc. â€” one entry per figure or sub-figure, never merged]
 
 Also include TWO mandatory static sentences at the start (before listing figures), copy verbatim:
