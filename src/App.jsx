@@ -1,4 +1,4 @@
-﻿import { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import * as docx from 'docx';
 import './style.css';
 import Login from './Login';
@@ -754,7 +754,7 @@ function PatentApp() {
   };
 
   const toggleSection = id => setSelected(p => p.includes(id) ? p.filter(x => x !== id) : [...p, id]);
-  const canGenerate = claims && disclosure && selected.length > 0 && !generating;
+  const canGenerate = disclosure && selected.length > 0 && !generating;
   const pct = progress.total > 0 ? Math.round((progress.current / progress.total) * 100) : 0;
   const doneCount = Object.keys(results).length;
 
@@ -828,7 +828,7 @@ function PatentApp() {
   };
 
   /* â”€â”€ step dots â”€â”€ */
-  const filesReady  = !!(claims && disclosure);
+  const filesReady  = !!disclosure;
   const sectionsOk  = selected.length > 0;
   const apiOk       = provider === 'ollama' || !!apiKey;
 
@@ -999,7 +999,7 @@ function PatentApp() {
               <div className="m-card-icon blue"><span className="material-icons-round mi">upload_file</span></div>
               <div>
                 <div className="m-card-title">Upload Source Files</div>
-                <div className="m-card-sub">Claims and Disclosure are required Â· Drawings optional</div>
+                <div className="m-card-sub">Disclosure is required · Claims and Drawings optional</div>
               </div>
             </div>
             <div className="file-grid-3">
@@ -1009,7 +1009,7 @@ function PatentApp() {
                 accept=".docx"
                 file={claims}
                 onChange={setClaims}
-                required={true}
+                required={false}
                 icon="gavel"
               />
               <FileBoxMain
